@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "boxroom-wall-calendar",
+  "name": "Wall Calendar",
+  "author": "MidgetBrony",
+  "description": "A placeable wall calendar that shows the real current month and crosses off completed days.",
+  "repository": "https://github.com/MidgetBrony/Boxroom-WallCalendar",
+  "requirements": { "melonLoader": "0.7.0" },
+  "dependencies": [
+    {
+      "manifest": "https://raw.githubusercontent.com/MidgetBrony/ModsPanel/master/manifest.json",
+      "minimumVersion": "2.6.2",
+      "required": true
+    }
+  ],
+  "release": { "provider": "github", "asset": "Boxroom-WallCalendar-1.6.0.zip", "checksumAsset": "SHA256SUMS.txt", "destination": "Mods" }
+}

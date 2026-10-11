@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="Directory.Build.user.props" Condition="Exists('Directory.Build.user.props')" />
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Boxroom_WallCalendar</AssemblyName>
+    <RootNamespace>BoxroomWallCalendar</RootNamespace>
+    <AssemblyVersion>1.6.0.0</AssemblyVersion>
+    <FileVersion>1.6.0.0</FileVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp" HintPath="$(GamePath)\BOXROOM_Data\Managed\Assembly-CSharp.dll" />
+    <Reference Include="0Harmony" HintPath="$(GamePath)\MelonLoader\net6\0Harmony.dll" />
+    <Reference Include="MelonLoader" HintPath="$(GamePath)\MelonLoader\net6\MelonLoader.dll" />
+    <Reference Include="UnityEngine" HintPath="$(GamePath)\BOXROOM_Data\Managed\UnityEngine.dll" />
+    <Reference Include="UnityEngine.CoreModule" HintPath="$(GamePath)\BOXROOM_Data\Managed\UnityEngine.CoreModule.dll" />
+    <Reference Include="UnityEngine.PhysicsModule" HintPath="$(GamePath)\BOXROOM_Data\Managed\UnityEngine.PhysicsModule.dll" />
+    <Reference Include="UnityEngine.ImageConversionModule" HintPath="$(GamePath)\BOXROOM_Data\Managed\UnityEngine.ImageConversionModule.dll" />
+    <Reference Include="UnityEngine.UnityWebRequestModule" HintPath="$(GamePath)\BOXROOM_Data\Managed\UnityEngine.UnityWebRequestModule.dll" />
+    <Reference Include="SkiaSharp" HintPath="$(GamePath)\BOXROOM_Data\Managed\SkiaSharp.dll" />
+    <Reference Include="ModsPanel" HintPath="$(ModsPanelPath)" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Fonts\Inter-Regular.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Inter-Medium.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\Inter-SemiBold.ttf" />
+    <EmbeddedResource Include="Assets\Fonts\LICENSE.txt" />
+    <EmbeddedResource Include="Assets\CalendarArt\Circles\Black.png" LogicalName="BoxroomWallCalendar.DefaultAssets.Circles.Black.png" />
+    <EmbeddedResource Include="Assets\CalendarArt\Circles\Red.png" LogicalName="BoxroomWallCalendar.DefaultAssets.Circles.Red.png" />
+    <EmbeddedResource Include="Assets\CalendarArt\Holidays\Halloween.png" LogicalName="BoxroomWallCalendar.DefaultAssets.Holidays.Halloween.png" />
+    <EmbeddedResource Include="Assets\CalendarArt\Holidays\Thanksgiving.png" LogicalName="BoxroomWallCalendar.DefaultAssets.Holidays.Thanksgiving.png" />
+  </ItemGroup>
+  <Target Name="ValidatePaths" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="'$(GamePath)' == '' or !Exists('$(GamePath)\BOXROOM.exe')" Text="Set GamePath to the BOXROOM installation using Directory.Build.user.props or -p:GamePath=..." />
+    <Error Condition="'$(ModsPanelPath)' == '' or !Exists('$(ModsPanelPath)')" Text="Set ModsPanelPath to ModsPanel.dll using Directory.Build.user.props or -p:ModsPanelPath=..." />
+  </Target>
+</Project>
