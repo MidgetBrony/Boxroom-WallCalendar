@@ -80,9 +80,3 @@ Copy `Directory.Build.user.props.example` to `Directory.Build.user.props`, adjus
 ```powershell
 dotnet build .\Boxroom-WallCalendar.csproj -c Release
 ```
-
-The project targets .NET Standard 2.1 for BOXROOM and MelonLoader compatibility.
-
-## Validation boundary
-
-Compilation and package verification do not prove in-game placement, artwork appearance, event rendering, or save restoration. Those behaviors require a live BOXROOM test.
